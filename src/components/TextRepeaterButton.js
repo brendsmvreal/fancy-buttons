@@ -1,21 +1,19 @@
 import { useState } from "react";
 
-function TextRepeaterButton(props) {
+function TextRepeaterButton () {
   const [repetitions, setRepetitions] = useState(1);
-
-  const textArray = [];
+  const textArea = [];
   for (let i = 0; i < repetitions; i++) {
-    textArray.push(<span key={i}>I like this text </span>);
+    textArea.push(<span key={i}>I like this text</span>);
   }
-
   const handleClick = () => {
     setRepetitions(repetitions + 1);
   }
 
   return (
-    <button onClick={handleClick} className="TextRepeaterButton">
-      {textArray}
-    </button>
+  <button className="TextRepeaterButton" onClick={handleClick}>
+    {textArea}
+  </button>
   );
 }
 
